@@ -19,29 +19,33 @@ public class MonthlyReport implements Report{
         info = new ArrayList<>();
         fillTheMonthMap();
     }
-    void saveReports(int monthNumber){
+    void loadReports(int monthNumber){
         String path = "resources\\m.20210"+monthNumber + ".csv";
         String contents =  readFileContents(path);
-        String [] lines = contents.split("\r\n");
-        for(int i = 1; i < lines.length;i++){
-            String line = lines[i];
-            String [] parts= line.split(",");
-            String itemName = parts[0];
-            boolean isExpense = Boolean.parseBoolean(parts[1]);
-            int quantity = Integer.parseInt(parts[2]);
-            int sumOfOne = Integer.parseInt(parts[3]);
+        if(contents!=null) {
+            String[] lines = contents.split("\r\n");
+            for (int i = 1; i < lines.length; i++) {
+                String line = lines[i];
+                String[] parts = line.split(",");
+                String itemName = parts[0];
+                boolean isExpense = Boolean.parseBoolean(parts[1]);
+                int quantity = Integer.parseInt(parts[2]);
+                int sumOfOne = Integer.parseInt(parts[3]);
 
-            MonthlyReportObject object = new MonthlyReportObject(itemName,isExpense,quantity,sumOfOne, monthNumber);
-            info.add(object);
+                MonthlyReportObject object = new MonthlyReportObject(itemName, isExpense, quantity, sumOfOne, monthNumber);
+                info.add(object);
+            }
+        }else{
+            System.out.println("Проверьте правильность введеного пути к требуемому файлу");
         }
-
     }
+
     public String readFileContents(String path) {
         try {
             isReaded = true;
             return Files.readString(Path.of(path));
         } catch (IOException e) {
-            System.out.println("Невозможно прочитать файл с годовым отчётом. Возможно файл не находится в нужной директории.");
+            System.out.println("Невозможно прочитать файл  " + path +". Возможно файл не находится в нужной директории.");
             return null;
         }
     }
@@ -133,7 +137,7 @@ public class MonthlyReport implements Report{
     }
 
 
-    @Override
+
      public void  fillTheMonthMap(){
         months.put(1,"Январь");
         months.put(2,"Февраль");

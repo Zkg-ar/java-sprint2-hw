@@ -10,25 +10,41 @@ public class YearlyReport implements Report {
         info = new ArrayList<>();
         fillTheMonthMap();
     }
-    void saveReport(String path){
+    void loadReport(String path) {
 
-        String contents =  readFileContents(path);
-        String [] lines = contents.split("\r\n");
-        for(int i = 1; i < lines.length;i++){
-            String line = lines[i];
-            String [] parts= line.split(",");
-            int month = Integer.parseInt(parts[0]);
-            int amount = Integer.parseInt(parts[1]);
-            boolean isExpense = Boolean.parseBoolean(parts[2]);
+        String contents = readFileContents(path);
+        if (contents!=null){
+             String[] lines = contents.split("\r\n");
+            for (int i = 1; i < lines.length; i++) {
+                String line = lines[i];
+                String[] parts = line.split(",");
+                int month = Integer.parseInt(parts[0]);
+                int amount = Integer.parseInt(parts[1]);
+                boolean isExpense = Boolean.parseBoolean(parts[2]);
 
-            YearReportObject yearReportInfo = new YearReportObject(month,amount,isExpense);
-            info.add(yearReportInfo);
-        }    }
+                YearReportObject yearReportInfo = new YearReportObject(month, amount, isExpense);
+                info.add(yearReportInfo);
+            }
+        }else{
+            System.out.println("Проверьте правильность введеного пути к требуемому файлу");
+        }
+    }
 
 
-    @Override
+
     public void fillTheMonthMap() {
-
+        months.put(1,"Январь");
+        months.put(2,"Февраль");
+        months.put(3,"Март");
+        months.put(4,"Апрель");
+        months.put(5,"Май");
+        months.put(6,"Июнь");
+        months.put(7,"Июль");
+        months.put(8,"Август");
+        months.put(9,"Сентябрь");
+        months.put(10,"Октябрь");
+        months.put(11,"Ноябрь");
+        months.put(12,"Декабрь");
     }
 
     @Override

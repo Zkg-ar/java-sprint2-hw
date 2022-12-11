@@ -12,10 +12,10 @@ public class Main {
             int userInput = scanner.nextInt();
             if(userInput == 1) {
                 for (int i = 1; i < 4 ; i ++){
-                    monthlyReport.saveReports(i);
+                    monthlyReport.loadReports(i);
                 }
             } else if(userInput == 2){
-                yearlyReport.saveReport("resources\\y.2021.csv");
+                yearlyReport.loadReport("resources\\y.2021.csv");
             } else if (userInput == 3) {
                 checker.checkReports();
 

@@ -26,25 +26,25 @@ public class YearlyReport implements Report {
                 info.add(yearReportInfo);
             }
         }else{
-            System.out.println("Проверьте правильность введеного пути к требуемому файлу");
+            System.out.println("РџСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРµРґРµРЅРѕРіРѕ РїСѓС‚Рё Рє С‚СЂРµР±СѓРµРјРѕРјСѓ С„Р°Р№Р»Сѓ");
         }
     }
 
 
 
-    public void fillTheMonthMap() {
-        months.put(1,"Январь");
-        months.put(2,"Февраль");
-        months.put(3,"Март");
-        months.put(4,"Апрель");
-        months.put(5,"Май");
-        months.put(6,"Июнь");
-        months.put(7,"Июль");
-        months.put(8,"Август");
-        months.put(9,"Сентябрь");
-        months.put(10,"Октябрь");
-        months.put(11,"Ноябрь");
-        months.put(12,"Декабрь");
+    public void  fillTheMonthMap(){
+        months.put(1,"РЇРЅРІР°СЂСЊ");
+        months.put(2,"Р¤РµРІСЂР°Р»СЊ");
+        months.put(3,"РњР°СЂС‚");
+        months.put(4,"РђРїСЂРµР»СЊ");
+        months.put(5,"РњР°Р№");
+        months.put(6,"РСЋРЅСЊ");
+        months.put(7,"РСЋР»СЊ");
+        months.put(8,"РђРІРіСѓСЃС‚");
+        months.put(9,"РЎРµРЅС‚СЏР±СЂСЊ");
+        months.put(10,"РћРєС‚СЏР±СЂСЊ");
+        months.put(11,"РќРѕСЏР±СЂСЊ");
+        months.put(12,"Р”РµРєР°Р±СЂСЊ");
     }
 
     @Override
@@ -53,19 +53,19 @@ public class YearlyReport implements Report {
             isReaded = true;
             return Files.readString(Path.of(path));
         } catch (IOException e) {
-            System.out.println("Невозможно прочитать файл с годовым отчётом. Возможно файл не находится в нужной директории.");
+            System.out.println("РќРµРІРѕР·РјРѕР¶РЅРѕ РїСЂРѕС‡РёС‚Р°С‚СЊ РіРѕРґРѕРІРѕР№ РѕС‚С‡РµС‚. Р’РѕР·РјРѕР¶РЅРѕ С„Р°Р№Р» РЅРµ РЅР°С…РѕРґРёС‚СЃСЏ РІ РЅСѓР¶РЅРѕР№ РґРёСЂРµРєС‚РѕСЂРёРё.");
             return null;
         }
     }
 
     public void  printInfoAboutYearReport(String fileName){
         if(isReaded){
-            System.out.println("Рассматриваемый год:" + getYearOfReport(fileName));
-            System.out.println("Прибыль по каждому месяцу:" + getProfit());
-            System.out.println("Средний расход за все месяцы в году:" + getAverageExpenses());
-            System.out.println("Средний доход за все месяцы в году :" + getAverageIncomes());
+            System.out.println("Р Р°СЃСЃРјР°С‚СЂРёРІР°РµРјС‹Р№ РіРѕРґ:" + getYearOfReport(fileName));
+            System.out.println("РџСЂРёР±С‹Р»СЊ РїРѕ РєР°Р¶РґРѕРјСѓ РјРµСЃСЏС†Сѓ:" + getProfit());
+            System.out.println("РЎСЂРµРґРЅРёР№ СЂР°СЃС…РѕРґ Р·Р° РІСЃРµ РјРµСЃСЏС†С‹ РІ РіРѕРґСѓ:" + getAverageExpenses());
+            System.out.println("РЎСЂРµРґРЅРёР№ РґРѕС…РѕРґ Р·Р° РІСЃРµ РјРµСЃСЏС†С‹ РІ РіРѕРґСѓ :" + getAverageIncomes());
         }else{
-            System.out.println("Годовой отчет еще не был считан. Выберите пункт 2 - Считать годовой отчет");
+            System.out.println("Р“РѕРґРѕРІРѕР№ РѕС‚С‡РµС‚ РµС‰Рµ РЅРµ Р±С‹Р» СЃС‡РёС‚Р°РЅ. Р’С‹Р±РµСЂРёС‚Рµ РїСѓРЅРєС‚ 2 - РЎС‡РёС‚Р°С‚СЊ СЃС‡РёС‚Р°С‚СЊ РіРѕРґРѕРІРѕР№ РѕС‚С‡РµС‚");
         }
     }
 
@@ -98,7 +98,7 @@ public class YearlyReport implements Report {
          for (int i = 0; i < array.length;i++){
             char[]mas = array[i].toCharArray();
             for(int j = 0; j<mas.length;j++){
-                if((int)mas[j]>=48 && (int)mas[j]<=57){ //Сравнивание по ASCII
+                if((int)mas[j]>=48 && (int)mas[j]<=57){ //РЎСЂР°РІРЅРµРЅРёРµ РїРѕ  ASCII
                     year+=mas[j];
                 }
             }

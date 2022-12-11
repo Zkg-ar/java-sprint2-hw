@@ -23,9 +23,9 @@ public class Checker {
 
         for (String key : yearReportExpenses.keySet()) {
             if(yearReportExpenses.get(key).equals(monthReportExpenses.get(key))){
-                System.out.println("Расходы за " + key + " совпадают в годовом и месячном отчетах");
+                System.out.println("Р Р°СЃС…РѕРґС‹ Р·Р° " + key + " СЃРѕРІРїР°РґР°СЋС‚ РІ РіРѕРґРѕРІРѕРј Рё РјРµСЃСЏС‡РЅРѕРј РѕС‚С‡РµС‚Р°С…");
             }else{
-                System.out.println("Ошибка! Расходы за " + key + " не совпадают в отчетах");
+                System.out.println("РћС€РёР±РєР°! Р Р°СЃС…РѕРґС‹ Р·Р° " + key + " РЅРµ СЃРѕРІРїР°РґР°СЋС‚ РІ РѕС‚С‡РµС‚Р°С…");
             }
         }
     }
@@ -35,13 +35,13 @@ public class Checker {
 
         for (String key : yearReportIncome.keySet()) {
             if(yearReportIncome.get(key).equals(monthReportIncome.get(key))){
-                System.out.println("Доходы за " + key + " совпадают в годовом и месячном отчетах");
+                System.out.println("Р”РѕС…РѕРґС‹ Р·Р° " + key + " СЃРѕРІРїР°РґР°СЋС‚ РІ РіРѕРґРѕРІРѕРј Рё РјРµСЃСЏС‡РЅРѕРј РѕС‚С‡РµС‚Р°С…");
             }else{
-                System.out.println("Ошибка! Доходы за " + key + " не совпадают в отчетах");
+                System.out.println("РћС€РёР±РєР°! Р”РѕС…РѕРґС‹ Р·Р° " + key + " РЅРµ СЃРѕРІРїР°РґР°СЋС‚ РІ РѕС‚С‡РµС‚Р°С…");
             }
         }
     }
     void printErrorMessage(){
-        System.out.println("Все требуемые для сверки отчеты не считаны. Воспользуйтесь пунтками 1 и 2, чтобы считать их.");
+        System.out.println("Р’СЃРµ С‚СЂРµР±СѓРµРјС‹Рµ РґР»СЏ СЃРІРµСЂРєРё РѕС‚С‡РµС‚С‹ РЅРµ СЃС‡РёС‚Р°РЅС‹. Р’РѕСЃРїРѕР»СЊР·СѓР№С‚РµСЃСЊ РїСѓРЅС‚РєР°РјРё 1 Рё 2, С‡С‚РѕР±С‹ СЃС‡РёС‚Р°С‚СЊ РёС….");
     }
 }

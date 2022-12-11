@@ -36,7 +36,7 @@ public class MonthlyReport implements Report{
                 info.add(object);
             }
         }else{
-            System.out.println("Проверьте правильность введеного пути к требуемому файлу");
+            System.out.println("РџСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРµРґРµРЅРѕРіРѕ РїСѓС‚Рё Рє С‚СЂРµР±СѓРµРјРѕРјСѓ С„Р°Р№Р»Сѓ");
         }
     }
 
@@ -45,18 +45,18 @@ public class MonthlyReport implements Report{
             isReaded = true;
             return Files.readString(Path.of(path));
         } catch (IOException e) {
-            System.out.println("Невозможно прочитать файл  " + path +". Возможно файл не находится в нужной директории.");
+            System.out.println("РќРµРІРѕР·РјРѕР¶РЅРѕ РїСЂРѕС‡РёС‚Р°С‚СЊ С„Р°Р№Р»  " + path +". Р’РѕР·РјРѕР¶РЅРѕ С„Р°Р№Р» РЅРµ РЅР°С…РѕРґРёС‚СЃСЏ РІ РЅСѓР¶РЅРѕР№ РґРёСЂРµРєС‚РѕСЂРёРё.");
             return null;
         }
     }
 
     public void  printInfoAboutMonthlyReport(int monthNumber){
         if(isReaded){
-            System.out.println("Отчет за " + getMonthName(monthNumber) + ":");
-            System.out.println("Самый прибыльный товар за этот месяц:" + getTheMostProfitableProduct(monthNumber));
-            System.out.println("Самая большая трата за этот месяц:" + getTheBiggetWaste(monthNumber));
+            System.out.println("РћС‚С‡РµС‚ Р·Р° " + getMonthName(monthNumber) + ":");
+            System.out.println("РЎР°РјС‹Р№ РїСЂРёР±С‹Р»СЊРЅС‹Р№ С‚РѕРІР°СЂ Р·Р° СЌС‚РѕС‚ РјРµСЃСЏС†:" + getTheMostProfitableProduct(monthNumber));
+            System.out.println("РЎР°РјР°СЏ Р±РѕР»СЊС€Р°СЏ С‚СЂР°С‚Р° Р·Р° СЌС‚РѕС‚ РјРµСЃСЏС†:" + getTheBiggetWaste(monthNumber));
         }else{
-            System.out.println("Отчет за " + months.get(monthNumber)  + " еще не был считан. Выберите пункт 1 - Считать все месячные отчет");
+            System.out.println("РћС‚С‡РµС‚ Р·Р° " + months.get(monthNumber)  + " РµС‰Рµ РЅРµ Р±С‹Р» СЃС‡РёС‚Р°РЅ. Р’С‹Р±РµСЂРёС‚Рµ РїСѓРЅРєС‚ 1 - РЎС‡РёС‚Р°С‚СЊ РІСЃРµ РјРµСЃСЏС‡РЅС‹Рµ РѕС‚С‡РµС‚");
         }
     }
 
@@ -139,18 +139,17 @@ public class MonthlyReport implements Report{
 
 
      public void  fillTheMonthMap(){
-        months.put(1,"Январь");
-        months.put(2,"Февраль");
-        months.put(3,"Март");
-        months.put(4,"Апрель");
-        months.put(5,"Май");
-        months.put(6,"Июнь");
-        months.put(7,"Июль");
-        months.put(8,"Август");
-        months.put(9,"Сентябрь");
-        months.put(10,"Октябрь");
-        months.put(11,"Ноябрь");
-        months.put(12,"Декабрь");
-
+        months.put(1,"РЇРЅРІР°СЂСЊ");
+        months.put(2,"Р¤РµРІСЂР°Р»СЊ");
+        months.put(3,"РњР°СЂС‚");
+        months.put(4,"РђРїСЂРµР»СЊ");
+        months.put(5,"РњР°Р№");
+        months.put(6,"РСЋРЅСЊ");
+        months.put(7,"РСЋР»СЊ");
+        months.put(8,"РђРІРіСѓСЃС‚");
+        months.put(9,"РЎРµРЅС‚СЏР±СЂСЊ");
+        months.put(10,"РћРєС‚СЏР±СЂСЊ");
+        months.put(11,"РќРѕСЏР±СЂСЊ");
+        months.put(12,"Р”РµРєР°Р±СЂСЊ");
     }
 }

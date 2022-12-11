@@ -29,7 +29,7 @@ public class Main {
             } else if (userInput == 0) {
                 break;
             }else{
-                System.out.println("Такая команда отсутсвует. Выберите одну из предложенных.");
+                System.out.println("Такая команда отсутствует. Выберите одну из предложенных.");
             }
         }
     }

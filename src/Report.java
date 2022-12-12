@@ -1,10 +1,10 @@
 import java.util.HashMap;
 
 public interface Report {
-    HashMap<Integer,String> months = new HashMap<>();
+    Map<Integer,String> months = new HashMap<Integer,String>();
     public void fillTheMonthMap(); 
     public String readFileContents(String path);
-    public HashMap<String,Integer> getExpenses();
-    public HashMap<String,Integer> getIncome();
+    public Map<String,Integer> getExpenses();
+    public Map<String,Integer> getIncome();
 
 }
